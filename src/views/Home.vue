@@ -1,18 +1,30 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 class="mainTitle">Adopt a pet</h1>
+    <dashboard></dashboard>
+    <AddForm v-if="this.$store.state.isDisplayed"></AddForm>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
+import Dashboard from "../components/Dashboard";
+import AddForm from "../components/AddForm";
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Dashboard,
+    AddForm
   }
 }
 </script>
+
+<style>
+
+  .mainTitle{
+    color: deepskyblue;
+  }
+
+</style>
